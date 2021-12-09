@@ -1,2 +1,33 @@
-# Costly-Air
-IF YOU WANT [HYPERLINK BLOCKED] THEN YOU MUST PAY [1000 USD]
+# Modles Folder
+
+### Products File
+
+- image
+
+- name
+
+- price
+
+
+# Routes
+
+### routes = /api/v1/
+
+### routes - /api/v1/images
+
+### routes - /api/v1/items
+
+### routes - /api/v1/cart
+
+### routes - /api/v1/buy
+
+
+# Controller Folder
+
+### imagesController
+
+### itemsController
+
+### cartController
+
+### buyController
