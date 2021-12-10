@@ -45,7 +45,7 @@
 
 - `/:id`
    - DELETE - removeItem
-   - POST - updateItem
+   - PATCH - updateItem
 
 ### buyRoutes (file) - `/api/v1/buy`
 
