@@ -1,35 +1,88 @@
-# Modles Folder
+# Modles (folder)
 
+### Products (file)
 
+ - name - String
+   - Required
+   - Unique
 
-### Products File
+ - price - Number
+   - Required
 
-- image
+ - image - String
+   - Required
 
-- name
+### Cart (file)
 
-- price
+ - name - String
+   - Required
+   - Unique
 
+ - price - Number
+   - Required
 
-# Routes
+ - image - String
+   - Required
 
-### routes = /api/v1/
+ - quantity - Number
 
-### routes - /api/v1/images
+# Routes (folder)
 
-### routes - /api/v1/items
+### productsRoutes (file) - `/api/v1/products` 
 
-### routes - /api/v1/cart
+- `/`
+   - GET - getAllProducts
+   - POST - createProduct
 
-### routes - /api/v1/buy
+- `/uploads`
+   - POST - uploadImage
 
+### cartRoutes (file) - `/api/v1/cart`
 
-# Controller Folder
+ - `/`
+   - POST - createItem
+   - GET - getAllItems
 
-### imagesController
+- `/:id`
+   - DELETE - removeItem
+   - POST - updateItem
 
-### itemsController
+### buyRoutes (file) - `/api/v1/buy`
 
-### cartController
+ - `/`
+   - POST - buyCart
 
-### buyController
+# Controller (folder)
+
+### productsController (file)
+
+ - createProduct
+   - Creates a product with `req.body`
+
+ - getAllProducts
+   - Find all products
+
+### imageUploadController (file)
+
+ - uploadImage
+
+   - Takes a file and creates an image on the local storage, returns a string of the path
+
+### cartController (file)
+
+ - createItem
+   - Creates a item in the cart useing `req.body`
+
+ - getAllItems
+   -  Find all items in the cart
+
+ - removeItem
+   - Removes an item from the cart
+
+ - updateItem
+   - Updates the quantity of an item in the cart
+  
+### buyController (file)
+
+ - buyCart
+   - Buys everything in the cart with the chosen card
