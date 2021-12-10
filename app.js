@@ -1,22 +1,32 @@
+const port = process.env.PORT || 3000;
+
 require("dotenv").config();
 require("express-async-errors");
 
 const express = require("express");
 const app = express();
 
-const stripeController = require("./controllers/stripeCon");
+const fileUpload = require('express-fileupload')
+const cloudinary = require('cloudinary').v2
+cloudinary.config({ 
+  cloud_name: process.env.cloud_name, 
+  api_key: process.env.api_key, 
+  api_secret: process.env.api_secret 
+});
 
 const notFoundError = require("./middleware/not-Availible");
 const errorHandlerMiddleware = require("./middleware/error-handler");
-
-const port = process.env.PORT || 3000;
+const connectDB = require('./DB/connect-function')
+//routes
 
 app
   .use(express.json())
 
   .use(express.static("./public"))
 
-  .post("/stripe", stripeController)
+  .get('/', (req, res) => {
+    res.send('test')
+  })
 
   .use(notFoundError);
 // .use(errorHandlerMiddleware);
