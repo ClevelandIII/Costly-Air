@@ -1,4 +1,4 @@
-# Modles (folder)
+# Models (folder)
 
 ### Products (file)
 
