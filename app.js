@@ -14,6 +14,9 @@ cloudinary.config({
   api_secret: process.env.api_secret 
 });
 
+const stripeController = require("./controllers/buyController");
+const productRouter = require("./routes/productRoutes");
+
 const notFoundError = require("./middleware/not-Availible");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 const connectDB = require('./DB/connect-function')
@@ -21,12 +24,11 @@ const connectDB = require('./DB/connect-function')
 
 app
   .use(express.json())
-
   .use(express.static("./public"))
+  .use(fileUpload({ useTempFiles: true }))
 
-  .get('/', (req, res) => {
-    res.send('test')
-  })
+  .post("/stripe", stripeController)
+  .use("/api/v1/products", productRouter)
 
   .use(notFoundError);
 // .use(errorHandlerMiddleware);

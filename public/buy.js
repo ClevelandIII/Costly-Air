@@ -7,7 +7,7 @@ const totalAmount = 150000;
 const shippingFee = 20000;
 
 const stripe = Stripe(
-  "pk_test_51K4ZcrBvuySoguS3rNACM19kOJfqetNQEHaTZnXZj0IwC3kvLDpNqCwRiizA5T4tMwLgNy4KqpkIBR9GtNPoaa6w001PPsydbe"
+  "pk_test_51K4ZIBEmWRskxVFxMBrw7rdNlSWk1vob5TN1xX7Gjg7eshJa73r8gnZGZt5X5Vt4uBThtx0VakHBA5sM7MxwDtKk00GLDkCtP4"
 );
 
 document.querySelector("button").disabled = true;
