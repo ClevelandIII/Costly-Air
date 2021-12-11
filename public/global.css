@@ -163,14 +163,17 @@ Variables
     width: 90vw;
     max-width: var(--max-width);
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
   }
+
   .nav-header img {
-    width: 10rem;
+    height: 4rem;
     margin-right: 5rem;
   }
   .nav-header a {
     display: block;
+    font-size: 1.2rem;
     letter-spacing: var(--spacing);
     color: var(--clr-white);
   }
