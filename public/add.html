@@ -5,26 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File Upload</title>
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="./add.css" />
   </head>
   <body>
-
+    <nav class="nav">
+      <div class="nav-header">
+        <img src="images/BTD63DMOAB.png" alt="MOAB" />
+        <a href="add.html">add</a>
+        <a href="buy.html">buy</a>
+        <a href="cart.html">cart</a>
+        <a href="index.html">index</a>
+      </div>
+    </nav>
     <form class="form file-form">
-        <h4>File Upload</h4>
-        <div class="form-row">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" id="name" class="form-input" value="chara">
-        </div>
-        <div class="form-row">
-            <label for="price" class="form-label">Price</label>
-            <input type="text" id="price" class="form-input" value="999999999999999999999999.99">
-        </div>
-        <div class="form-row">
-            <label for="image" class="form-label">Image</label>
-            <input type="file" id="image" class="form-input" accept="image/*">
-        </div>
-        <button type="submit" class="btn btn-block">Add Product</button>
+      <h4>File Upload</h4>
+      <div class="form-row">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" class="form-input" value="chara" />
+      </div>
+      <div class="form-row">
+        <label for="price" class="form-label">Price</label>
+        <input
+          type="text"
+          id="price"
+          class="form-input"
+          value="999999999999999999999999.99"
+        />
+      </div>
+      <div class="form-row">
+        <label for="image" class="form-label">Image</label>
+        <input type="file" id="image" class="form-input" accept="image/*" />
+      </div>
+      <button type="submit" class="btn btn-block">Add Product</button>
     </form>
 
     <section class="container"></section>
