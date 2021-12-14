@@ -24,7 +24,8 @@ async function fetchProducts() {
         <footer>
           <p>${product.name}</p>
           <span>${product.price}</span>
-          <button onclick="addToCart('${product.name}')">add to cart</button>
+          <p> | </p>
+          <button onclick="addToCart('${product.name}')" class='cart'>Add to Cart</button>
         </footer>
       </article>`;
       })

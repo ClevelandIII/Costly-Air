@@ -313,7 +313,7 @@ max-width: 400px;
   color: lightgrey;
 }
 
-#cart{
+.cart{
   border-radius: var(--borderRadius);
   background-color: var(--primary-500);
   border: 1px solid var(--primary-500);
