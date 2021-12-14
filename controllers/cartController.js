@@ -5,7 +5,7 @@ const Cart = require("../models/cartSchema");
 const createItem = async (req, res) => {
   const { quantity } = req.body
   if(quantity > 0){
-    constitem = await Cart.create(req.body)
+    const item = await Cart.create(req.body)
     res.status(200).json({item})
   } else {
     throw new BadRequest("Quantity must be greater than 0");
