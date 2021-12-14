@@ -4,7 +4,7 @@ const nameInput = document.querySelector("#name");
 const priceInput = document.querySelector("#price");
 const imageInput = document.querySelector("#image");
 const container = document.querySelector(".container");
-const cart = document.querySelector("#cart");
+const button = document.querySelector(".btn");
 
 let imageValue; //saves the path to the image on upload
 
@@ -41,39 +41,11 @@ fileForm.addEventListener("submit", async (e) => {
   try {
     const product = { price: priceValue, image: imageValue, name: nameValue };
     await axios.post(url, product);
-
-    fetchProducts();
   } catch (err) {
     console.log(err);
   }
 });
 
-async function fetchProducts() {
-  try {
-    const {
-      data: { products },
-    } = await axios.get(url);
-    const tempContainerHTML = products
-      .map((product) => {
-        return `<article class='product'>
-      <img src= '${product.image}' alt='${product.name}' class='img' />
-      <footer class='footer'>
-      <p>${product.name}</p>
-      <span>${product.price}</span>
-      <p> | </p>
-      <button id='cart'>Add to Cart</button>
-      </footer>
-      </article>`;
-      })
-      .join("");
-    container.innerHTML = tempContainerHTML;
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-fetchProducts();
-
-// document.getElementById('cart').addEventListener('onclick', function(){
-//   console.log('hey');
+// button.addEventListener('onclick', (e) => {
+//   imageInput.value = ''
 // })

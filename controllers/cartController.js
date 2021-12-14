@@ -1,6 +1,6 @@
 const { log } = require("console");
-const { NotFoundError, BadRequestError } = require("../error");
-const Cart = require("../models/Cart");
+const { NotFoundError, BadRequest } = require("../error");
+const Cart = require("../models/cartSchema");
 
 const createItem = async (req, res) => {
   const { quantity } = req.body
