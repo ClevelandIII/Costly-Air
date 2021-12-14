@@ -14,8 +14,9 @@ cloudinary.config({
   api_secret: process.env.api_secret 
 });
 
-const stripeController = require("./controllers/buyController");
+const buyController = require("./controllers/buyController");
 const productRouter = require("./routes/productRoutes");
+const cartRouter = require("./routes/cartRoutes");
 
 const notFoundError = require("./middleware/not-Availible");
 const errorHandlerMiddleware = require("./middleware/error-handler");
@@ -27,10 +28,11 @@ app
   .use(express.static("./public"))
   .use(fileUpload({ useTempFiles: true }))
 
-  .post("/stripe", stripeController)
+  .post("/stripe", buyController)
   .use("/api/v1/products", productRouter)
+  .use("/api/v1/cart", cartRouter)
 
-  .use(notFoundError);
+  // .use(notFoundError);
 // .use(errorHandlerMiddleware);
 
 const start = async () => {
