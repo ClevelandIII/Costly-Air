@@ -309,4 +309,14 @@ max-width: 400px;
     }
   }
 
-  
+#add{
+  color: lightgrey;
+}
+
+#cart{
+  border-radius: var(--borderRadius);
+  background-color: var(--primary-500);
+  border: 1px solid var(--primary-500);
+  color: var(--white);
+  padding: 0.2rem;
+}

@@ -20,7 +20,7 @@ input {
   border: 1px solid rgba(50, 50, 93, 0.1);
   height: 44px;
   font-size: 16px;
-  width: 100%;
+  width: 100%; 
   background: white;
 }
 
@@ -158,4 +158,8 @@ button:disabled {
   form {
     width: 80vw;
   }
+}
+
+#buy{
+  color: lightgrey;
 }

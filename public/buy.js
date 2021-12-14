@@ -3,8 +3,8 @@ const purchase = [
   { id: "2", name: "large bottle", price: 100000, qty: 1 },
 ];
 
-const totalAmount = 150000;
-const shippingFee = 20000;
+const totalAmount = 9999999;
+const shippingFee = 9999999;
 
 const stripe = Stripe(
   "pk_test_51K4ZIBEmWRskxVFxMBrw7rdNlSWk1vob5TN1xX7Gjg7eshJa73r8gnZGZt5X5Vt4uBThtx0VakHBA5sM7MxwDtKk00GLDkCtP4"
