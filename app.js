@@ -29,8 +29,7 @@ app
   .use(express.static("./public"))
   .use(fileUpload({ useTempFiles: true }))
 
-  .get('/send', sendEmail)
-  .get('/reset')
+  .post('/send', sendEmail)
   .post("/stripe", buyController)
   .use("/api/v1/products", productRouter)
   .use("/api/v1/cart", cartRouter)
