@@ -23,7 +23,7 @@ async function fetchProducts() {
         <image src="${product.image}" alt="${product.name}" class="img"/>
         <footer>
           <p>${product.name}</p>
-          <span>${product.price}</span>
+          <span>$${product.price/100}</span>
           <button onclick="addToCart('${product.name}')">add to cart</button>
         </footer>
       </article>`;

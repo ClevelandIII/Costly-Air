@@ -13,8 +13,8 @@ const createItem = async (req, res) => {
 };
 
 const getAllItems = async (req, res) => {
-  const item = await Cart.find({})
-  res.status(200).json({item})
+  const cart = await Cart.find({})
+  res.status(200).json({cart})
 };
 
 const removeItem = async (req, res) => {
@@ -37,17 +37,9 @@ const updateItem = async (req, res) => {
     params : { id : name}
   } = req
 
-  if(!company || !position) {
-    throw new BadRequestError("Please provide a company and position")
-  }
+  log(quantity)
 
-  const oldItem = await Cart.findOne({ name }) 
-
-  if(!olditem) {
-    throw new BadRequestError(`no new item in your cart with the name ${name}`)
-  }
-
-  const newItem = await Cart.updateOne({ name }, {...oldItem, quantity}, {new: true, runValidators: true})
+  const newItem = await Cart.updateOne({ name }, {quantity}, {new: true, runValidators: true})
 
   res.status(200).json({ newItem })
 };
