@@ -31,6 +31,12 @@ const removeItem = async (req, res) => {
   res.status(200).json({ item })
 }
 
+const removeAllItems = async (req, res) => {
+  const item = await Cart.deleteMany({})
+
+  res.status(200).json({ item })
+}
+
 const updateItem = async (req, res) => {
   const {
     body : {quantity},
@@ -48,5 +54,6 @@ module.exports = {
   createItem,
   getAllItems,
   removeItem,
+  removeAllItems,
   updateItem,
 };

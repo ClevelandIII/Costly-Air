@@ -75,7 +75,7 @@ async function doStuff() {
     });
 }
 
-doStuff() 
+doStuff();
 
 const payWithCard = (stripe, card, clientSecret) => {
   loading(true);
@@ -89,6 +89,7 @@ const payWithCard = (stripe, card, clientSecret) => {
       } else {
         orderComplete(response.paymentIntent.id);
       }
+      await axios.delete(`${url}/cart`);
     })
     .catch((err) => {
       console.log(err);
