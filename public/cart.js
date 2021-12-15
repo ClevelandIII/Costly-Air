@@ -1,5 +1,20 @@
 const url = "/api/v1";
 const container = document.querySelector(".container");
+const costDisplay = document.querySelector(".cost");
+
+let totalAmount = 0;
+
+async function calcTotal() {
+  const {
+    data: { cart },
+  } = await axios.get(`${url}/cart`);
+  cart.forEach((item) => {
+    totalAmount += Number(item.price) * Number(item.quantity);
+  });
+  costDisplay.innerHTML = `The total cart price is: $${(totalAmount + 30000) / 100}`;
+}
+
+calcTotal()
 
 async function addOne(name, quant) {
   console.log(name);
@@ -56,8 +71,12 @@ async function fetchItems() {
         <p>${item.name}</p>
         <span>$${item.price / 100}</span>
         <div class="buttons">
-          <button onclick="subOne('${item.name}', '${item.quantity}')" class="cart">-</button>
-          <button onclick="addOne('${item.name}', '${item.quantity}')" class="cart">+</button>
+          <button onclick="subOne('${item.name}', '${
+          item.quantity
+        }')" class="cart">-</button>
+          <button onclick="addOne('${item.name}', '${
+          item.quantity
+        }')" class="cart">+</button>
         </div>
         </footer>
       </article>`;
@@ -70,3 +89,4 @@ async function fetchItems() {
 }
 
 fetchItems();
+

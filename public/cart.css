@@ -13,3 +13,8 @@
   color: var(--white);
   padding: 0.2rem;
 }
+
+.cost{
+  text-align: right;
+  
+}

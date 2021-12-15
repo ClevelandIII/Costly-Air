@@ -21,6 +21,8 @@ const cartRouter = require("./routes/cartRoutes");
 const notFoundError = require("./middleware/not-Availible");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 const connectDB = require('./DB/connect-function')
+const sendEmail = require("./controllers/sendEmail");
+const id = require("./controllers/id");
 //routes
 
 app
@@ -28,6 +30,8 @@ app
   .use(express.static("./public"))
   .use(fileUpload({ useTempFiles: true }))
 
+  .get('/send', sendEmail)
+  .get('/reset', id)
   .post("/stripe", buyController)
   .use("/api/v1/products", productRouter)
   .use("/api/v1/cart", cartRouter)
