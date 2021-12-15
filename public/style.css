@@ -126,8 +126,6 @@ ul {
 }
 
 .img {
-  width: 100%;
-  display: block;
   object-fit: cover;
 }
 /* buttons */
@@ -275,7 +273,7 @@ max-width: 400px;
 }
 
 .container img {
-    height: 175px;
+    height: 200px;
     border-radius: var(--borderRadius);
   }
 .container footer {
@@ -319,4 +317,8 @@ max-width: 400px;
   border: 1px solid var(--primary-500);
   color: var(--white);
   padding: 0.2rem;
+}
+
+.product{
+  text-align: center;
 }
