@@ -160,6 +160,10 @@ button:disabled {
   }
 }
 
-#buy{
-  color: lightgrey;
+.cost{
+  color: var(--primary-500);
+}
+
+.size{
+  text-align: center;
 }
