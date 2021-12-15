@@ -4,7 +4,7 @@ const nameInput = document.querySelector("#name");
 const priceInput = document.querySelector("#price");
 const imageInput = document.querySelector("#image");
 const container = document.querySelector(".container");
-const sendButton = document.querySelector("#send");
+const sendButton = document.querySelector(".send");
 const resetButton = document.querySelector("#reset");
  
 let imageValue; //saves the path to the image on upload
