@@ -45,7 +45,3 @@ fileForm.addEventListener("submit", async (e) => {
     console.log(err);
   }
 });
-
-// button.addEventListener('onclick', (e) => {
-//   imageInput.value = ''
-// })
