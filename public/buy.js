@@ -1,16 +1,29 @@
-const purchase = [
-  { id: "1", name: "bottle", price: 30000, qty: 1 },
-  { id: "2", name: "large bottle", price: 100000, qty: 1 },
-];
+const url = "/api/v1";
+document.querySelector("button").disabled = true;
+const costDisplay = document.querySelector(".cost");
 
-const totalAmount = 9999999;
-const shippingFee = 9999999;
+let purchase = []
+let totalAmount = 0;
+
+async function calcTotal() {
+  const {
+    data: { cart },
+  } = await axios.get(`${url}/cart`);
+  cart.forEach((item) => {
+    purchase.push(item)
+    totalAmount += Number(item.price) * Number(item.quantity);
+  });
+  costDisplay.innerHTML = `$${(totalAmount+shippingFee) / 100}`;
+}
+
+const shippingFee = 30000;
+
+calcTotal()
+
 
 const stripe = Stripe(
   "pk_test_51K4ZIBEmWRskxVFxMBrw7rdNlSWk1vob5TN1xX7Gjg7eshJa73r8gnZGZt5X5Vt4uBThtx0VakHBA5sM7MxwDtKk00GLDkCtP4"
 );
-
-document.querySelector("button").disabled = true;
 
 fetch("/stripe", {
   method: "POST",
