@@ -88,7 +88,7 @@ const payWithCard = (stripe, card, clientSecret) => {
       } else {
         orderComplete(response.paymentIntent.id);
       }
-      await axios.delete(`${url}/cart`);
+     axios.delete(`${url}/cart`);
     })
     .catch((err) => {
       console.log(err);
