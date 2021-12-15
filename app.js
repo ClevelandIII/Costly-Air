@@ -30,7 +30,7 @@ app
   .use(fileUpload({ useTempFiles: true }))
 
   .get('/send', sendEmail)
-  .get('/reset', id)
+  .get('/reset')
   .post("/stripe", buyController)
   .use("/api/v1/products", productRouter)
   .use("/api/v1/cart", cartRouter)
