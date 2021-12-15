@@ -51,13 +51,13 @@ async function fetchItems() {
       .map((item) => {
         return `<article class="item">
         <image src="${item.image}" alt="${item.name}" class="img"/>
-        <div>You have ${item.quantity}</div>
+        <div>You have: ${item.quantity}</div>
         <footer>
         <p>${item.name}</p>
         <span>$${item.price / 100}</span>
         <div class="buttons">
-          <button onclick="subOne('${item.name}', '${item.quantity}')">-</button>
-          <button onclick="addOne('${item.name}', '${item.quantity}')">+</button>
+          <button onclick="subOne('${item.name}', '${item.quantity}')" class="cart">-</button>
+          <button onclick="addOne('${item.name}', '${item.quantity}')" class="cart">+</button>
         </div>
         </footer>
       </article>`;

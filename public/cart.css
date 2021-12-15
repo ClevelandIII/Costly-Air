@@ -1,3 +1,15 @@
-#cart{
-    color: lightgrey;
+#cart {
+  color: lightgrey;
+}
+
+.item {
+  text-align: center;
+}
+
+.cart {
+  border-radius: var(--borderRadius);
+  background-color: var(--primary-500);
+  border: 1px solid var(--primary-500);
+  color: var(--white);
+  padding: 0.2rem;
 }

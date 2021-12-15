@@ -13,7 +13,7 @@ async function calcTotal() {
     purchase.push(item);
     totalAmount += Number(item.price) * Number(item.quantity);
   });
-  costDisplay.innerHTML = `$${(totalAmount + shippingFee) / 100}`;
+  costDisplay.innerHTML = `The total cart price is: $${(totalAmount + shippingFee) / 100}`;
 }
 
 const shippingFee = 30000;
