@@ -22,7 +22,6 @@ const notFoundError = require("./middleware/not-Availible");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 const connectDB = require('./DB/connect-function')
 const sendEmail = require("./controllers/sendEmail");
-const id = require("./controllers/id");
 //routes
 
 app

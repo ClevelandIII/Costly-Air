@@ -1,6 +1,6 @@
 require("dotenv").config();
 const nodemailer = require("nodemailer");
-const message = {
+let message = {
   //Yeah i think ill stick with the example. Naa it doesnt save any time and yes its lazy and.......
   from: "sender@server.com",
   to: "receiver@sender.com",
@@ -10,6 +10,7 @@ const message = {
 };
 
 const sendEmail = async (req, res) => {
+  const { price } = req.body;
   const transporter = nodemailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
@@ -18,6 +19,9 @@ const sendEmail = async (req, res) => {
       pass: process.env.MAILER_PASS,
     },
   });
+
+  message.text = `$${price/100} was your total`;
+  message.html = `<h1>$${price/100}</h1><p> was your total</p>`;
 
   const info = await transporter.sendMail(message);
 
