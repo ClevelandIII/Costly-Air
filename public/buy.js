@@ -3,6 +3,7 @@ document.querySelector("button").disabled = true;
 const costDisplay = document.querySelector(".cost");
 
 let purchase = [];
+let totalAmount = 0;
 
 async function calcTotal() {
   const {
