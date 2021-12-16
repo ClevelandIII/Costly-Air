@@ -1,3 +1,4 @@
+const { log } = require("console");
 require("dotenv").config();
 const nodemailer = require("nodemailer");
 let message = {
@@ -20,11 +21,15 @@ const sendEmail = async (req, res) => {
     },
   });
 
-  log(cart)
-
+  let container = `<section>`
+  cart.map((item) => {
+    const {name, price, quantity} = item
+    container += `<div><h3>${name}</h3><br><p>$${price} * ${quantity}</p></div>`
+  })
+  container += `</section>`
+  
   message.text = `$${price/100} was your total ${cart}`;
-  message.html = `<h1>$${price/100}</h1><p> was your total</p>`;
-
+  message.html = `<h1>$${price/100}</h1><p> was your total</p>${container}`;
   const info = await transporter.sendMail(message);
 
   res.json(info);
